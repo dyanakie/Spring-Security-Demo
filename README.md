@@ -2,7 +2,7 @@
 
 A simple App that works with spring security and thymeleaf.
 
-It shows different things whether you are anonymous or logged in.
+It shows different things depending if you are anonymous or logged in.
 
 It forbids the /admin page if you are not authorised with ADMIN role.
 
