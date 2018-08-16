@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -8,7 +11,7 @@
 
 <h1>WELCOME TO ADMIN PAGE</h1>
 
-<a href="/"><button>HOME</button></a>
+<a th:href="@{/}"><button>HOME</button></a>
 
 </body>
 </html>
