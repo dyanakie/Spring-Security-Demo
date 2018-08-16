@@ -10,6 +10,9 @@ xmlns:th="http://www.thymeleaf.org"
 
 <h1>WELCOME TO SPRING SECURITY DEMO</h1>
 
+<p sec:authorize="isAnonymous()">This is what you see when you are nog logged in.Blah Blah.</p>
+
+<br>
 
 <p sec:authorize="hasRole('ROLE_ADMIN')">
         User:<span sec:authentication="name" />
@@ -20,9 +23,11 @@ xmlns:th="http://www.thymeleaf.org"
     </p>
 
 
-<form th:action="@{/logout}" method="post">
+<form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
         <input type="submit" value="Logout" />
-    </form>
+</form>
+
+<a sec:authorize="isAnonymous()" th:href="@{login}">Login</a>
 
 
 </body>
