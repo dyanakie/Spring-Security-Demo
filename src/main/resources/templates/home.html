@@ -10,7 +10,15 @@ xmlns:th="http://www.thymeleaf.org"
 
 <h1>WELCOME TO SPRING SECURITY DEMO</h1>
 
-<a th:href="@{/admin}"><button>Admin Section</button></a>
+
+<p sec:authorize="hasRole('ROLE_ADMIN')">
+        User:<span sec:authentication="name" />
+        <br/>
+        Role(s):<span sec:authentication="principal.authorities" />
+        <br/>
+        <a th:href="@{/admin}"><button>Admin Section</button></a>
+    </p>
+
 
 <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout" />
